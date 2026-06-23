@@ -65,10 +65,16 @@ const rhythms = [
 export default function Home() {
   return (
     <main className="bg-[#f7f2e8] text-[#15120f]">
+      
+      <audio controls className="w-full">
+        <source src="/music/Whispers of the Emerald.ogg" type="audio/ogg" />
+        你的浏览器不支持音频播放。
+      </audio>
+      
       <nav className="fixed left-0 right-0 top-0 z-30 border-b border-white/20 bg-[#11100d]/70 px-5 py-3 text-sm text-white/90 shadow-sm backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
           <a className="font-semibold tracking-wide" href="#top">
-            ACGN Math Seminar
+            Neon Genesis Theoremgelions
           </a>
           <div className="hidden items-center gap-5 md:flex">
             <a href="#research">研究方向</a>
@@ -259,7 +265,7 @@ export default function Home() {
           </div>
           <a
             className="inline-flex h-12 items-center justify-center border border-[#78d8c4] bg-[#78d8c4] px-5 font-bold text-[#102019] transition hover:bg-transparent hover:text-[#78d8c4]"
-            href="yuzk23@mails.tsinghua.edu.cn"
+            href="mailto:yuzk23@mails.tsinghua.edu.cn"
           >
             联系我们
           </a>
