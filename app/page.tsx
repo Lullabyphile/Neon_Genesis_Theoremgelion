@@ -56,9 +56,10 @@ const watchList = [
 ];
 
 const rhythms = [
-  "每周一次放映会，默认带零食、吐槽和第二天的余韵。",
-  "有人负责找片，有人负责补设定，有人负责把剧情隐喻扯到同调代数。",
-  "讨论可以从角色弧光自然滑向 moduli space，也可以完全停留在一句“这集太强了”。",
+  {text: "每周一次放映会，默认带零食、吐槽和第二天的余韵。"},
+  {text: "有人负责找片，有人负责补设定，有人负责把剧情隐喻扯到centipede homology。"},
+  {text: "讨论可以从角色弧光自然滑向 moduli space，也可以完全停留在一句“这集太强了”。"},
+  {text: "这里是我们想要看或者已经看过的番", href: "https://bgm.tv/index/78961"},
 ];
 
 export default function Home() {
@@ -170,7 +171,7 @@ export default function Home() {
               我们的日常更像一张持续更新的黑板
             </h2>
             <p className="mt-5 text-base leading-8 text-white/70">
-              上午可能在追一个谱序列，下午讨论 estimates，晚上一起看一集动画。站点的视觉语言因此介于粉笔线、量子图、live house 灯光和深夜公共室之间。
+              上午可能在追一个谱序列，下午讨论均匀化和estimates，晚上一起看一集动画。站点的视觉语言因此介于粉笔线、量子图、live house 灯光和深夜公共室之间。
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
@@ -205,14 +206,26 @@ export default function Home() {
                 每周看动画片，是组会之外的另一种共识
               </h2>
               <div className="mt-7 space-y-3">
-                {rhythms.map((item) => (
-                  <p
-                    className="border-l-4 border-[#ff8566] bg-white/54 py-3 pl-4 text-base leading-7 text-[#4e463e]"
-                    key={item}
+                {rhythms.map((item) => 
+                  item.href ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block border-l-4 border-[#ff8566] bg-white/54 py-3 pl-4 text-base leading-7 text-[#4e463e]"
+                    key={item.text}
                   >
-                    {item}
-                  </p>
-                ))}
+                    {item.text}
+                  </a>
+                  ) : (
+                    <p
+                      className="border-l-4 border-[#ff8566] bg-white/54 py-3 pl-4 text-base leading-7 text-[#4e463e]"
+                      key={item.text}
+                    >
+                      {item.text}
+                    </p>
+                  )
+                )}
               </div>
             </div>
 
@@ -246,7 +259,7 @@ export default function Home() {
           </div>
           <a
             className="inline-flex h-12 items-center justify-center border border-[#78d8c4] bg-[#78d8c4] px-5 font-bold text-[#102019] transition hover:bg-transparent hover:text-[#78d8c4]"
-            href="mailto:hello@example.edu"
+            href="yuzk23@mails.tsinghua.edu.cn"
           >
             联系我们
           </a>
