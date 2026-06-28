@@ -38,6 +38,16 @@ const researchAreas = [
   },
 ];
 
+const seminarRecords = [
+  {
+    title: "凉宫春日问题",
+    eyebrow: "ACGN × Combinatorics",
+    copy: "由《凉宫春日》系列动画观看顺序引出的组合问题：如何构造一个尽可能短的序列，使得所有排列都作为连续子串出现。",
+    tags: ["组合数学", "superpermutation", "NGT seminar"],
+    href: "https://www.bilibili.com/video/BV14UTK6JEX4",
+  },
+];
+
 const watchList = [
   "轻音少女",
   "Girls Band Cry",
@@ -74,11 +84,12 @@ export default function Home() {
       <nav className="fixed left-0 right-0 top-0 z-30 border-b border-white/20 bg-[#11100d]/70 px-5 py-3 text-sm text-white/90 shadow-sm backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
           <a className="font-semibold tracking-wide" href="#top">
-            Neon Genesis Theoremgelions
+            Neon Genesis Theoremgelions (NGTs)
           </a>
           <div className="hidden items-center gap-5 md:flex">
             <a href="#research">研究方向</a>
             <a href="#watch">每周观影</a>
+            <a href="#seminars">讨论班记录</a>
             <a href="#join">加入讨论</a>
           </div>
         </div>
@@ -200,6 +211,54 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      
+      <section id="seminars" className="px-5 py-20">
+  <div className="mx-auto max-w-7xl">
+    <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#bd4c3e]">
+      古代近代现代当代数学物理信息非前沿非非前沿讨论班———
+    </p>
+    <h2 className="mt-3 max-w-3xl text-4xl font-black sm:text-5xl">
+      从动画梗走向数学的问题现场
+    </h2>
+
+    <div className="mt-10 grid gap-4 md:grid-cols-2">
+      {seminarRecords.map((talk) => (
+        <a
+          key={talk.title}
+          href={talk.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group block border border-[#d7c8ad] bg-[#fffaf0] p-5 shadow-[0_10px_30px_rgba(33,24,10,0.06)] transition hover:-translate-y-1 hover:border-[#bd4c3e]"
+        >
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#2d8f82]">
+            {talk.eyebrow}
+          </p>
+          <h3 className="mt-3 text-2xl font-black group-hover:text-[#bd4c3e]">
+            {talk.title}
+          </h3>
+          <p className="mt-4 text-sm leading-7 text-[#5b5146]">
+            {talk.copy}
+          </p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {talk.tags.map((tag) => (
+              <span
+                key={tag}
+                className="border border-[#d7c8ad] px-2 py-1 text-xs font-bold text-[#5b5146]"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+          <p className="mt-5 font-bold text-[#bd4c3e]">
+            打开录像 →
+          </p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       <section id="watch" className="px-5 py-20">
         <div className="mx-auto max-w-7xl">
