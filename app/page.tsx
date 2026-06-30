@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const researchAreas = [
   {
@@ -88,6 +89,9 @@ export default function Home() {
           </a>
           <div className="hidden items-center gap-5 md:flex">
             <a href="#research">研究方向</a>
+            <Link href="/members">
+              成员
+            </Link>
             <a href="#watch">每周观影</a>
             <a href="#seminars">讨论班记录</a>
             <a href="#join">加入讨论</a>
@@ -177,6 +181,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
       <section className="bg-[#13110f] px-5 py-20 text-white">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
